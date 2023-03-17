@@ -15,7 +15,8 @@ void main() {
     var engine = RC2Engine();
     var actual = Uint8List(0);
 
-    var params = RC2Parameters(HexUtils.decode("0000000000000000"), bits: 63);
+    var params =
+        BasicUtilsRC2Parameters(HexUtils.decode("0000000000000000"), bits: 63);
     var input = HexUtils.decode("0000000000000000");
     var output = HexUtils.decode("EBB773F993278EFF");
 
@@ -23,7 +24,8 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("ffffffffffffffff"), bits: 64);
+    params =
+        BasicUtilsRC2Parameters(HexUtils.decode("ffffffffffffffff"), bits: 64);
     input = HexUtils.decode("ffffffffffffffff");
     output = HexUtils.decode("278b27e42e2f0d49");
 
@@ -31,7 +33,8 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("3000000000000000"), bits: 64);
+    params =
+        BasicUtilsRC2Parameters(HexUtils.decode("3000000000000000"), bits: 64);
     input = HexUtils.decode("1000000000000001");
     output = HexUtils.decode("30649edf9be7d2c2");
 
@@ -39,7 +42,7 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("88"), bits: 64);
+    params = BasicUtilsRC2Parameters(HexUtils.decode("88"), bits: 64);
     input = HexUtils.decode("0000000000000000");
     output = HexUtils.decode("61a8a244adacccf0");
 
@@ -47,7 +50,8 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("88bca90e90875a"), bits: 64);
+    params =
+        BasicUtilsRC2Parameters(HexUtils.decode("88bca90e90875a"), bits: 64);
     input = HexUtils.decode("0000000000000000");
     output = HexUtils.decode("6ccf4308974c267f");
 
@@ -55,7 +59,8 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("88bca90e90875a7f0f79c384627bafb2"),
+    params = BasicUtilsRC2Parameters(
+        HexUtils.decode("88bca90e90875a7f0f79c384627bafb2"),
         bits: 64);
     input = HexUtils.decode("0000000000000000");
     output = HexUtils.decode("1a807d272bbe5db1");
@@ -64,7 +69,8 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(HexUtils.decode("88bca90e90875a7f0f79c384627bafb2"),
+    params = BasicUtilsRC2Parameters(
+        HexUtils.decode("88bca90e90875a7f0f79c384627bafb2"),
         bits: 128);
     input = HexUtils.decode("0000000000000000");
     output = HexUtils.decode("2269552ab0f85ca6");
@@ -73,7 +79,7 @@ void main() {
     actual = engine.process(input);
     expect(actual, output);
 
-    params = RC2Parameters(
+    params = BasicUtilsRC2Parameters(
         HexUtils.decode(
             "88bca90e90875a7f0f79c384627bafb216f80a6f85920584c42fceb0be255daf1e"),
         bits: 129);
@@ -101,7 +107,7 @@ void main() {
     //print(StringUtils.uint8ListToHex(d));
     //print("098F6BCD46");
     var params = ParametersWithIV(
-      RC2Parameters(
+      BasicUtilsRC2Parameters(
         HexUtils.decode("098F6BCD46"),
         bits: 40,
       ),
