@@ -2,10 +2,10 @@ import 'dart:typed_data';
 
 import 'package:basic_utils/basic_utils.dart';
 
-class RC2Parameters extends KeyParameter {
+class BasicUtilsRC2Parameters extends KeyParameter {
   late int effectiveKeyBits;
 
-  RC2Parameters(Uint8List key, {int? bits}) : super(key) {
+  BasicUtilsRC2Parameters(Uint8List key, {int? bits}) : super(key) {
     if (bits != null) {
       effectiveKeyBits = bits;
     } else {

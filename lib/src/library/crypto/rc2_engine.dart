@@ -322,7 +322,7 @@ class RC2Engine implements BlockCipher {
 
     Uint8List key;
     if (params != null) {
-      if (params is RC2Parameters) {
+      if (params is BasicUtilsRC2Parameters) {
         workingKey = generateWorkingKey(params.key, params.effectiveKeyBits);
         key = params.key;
       } else if (params is KeyParameter) {
